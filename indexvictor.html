@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Priviet</title>
+</head>
+<h1> Pruebas con HTTP/HTTPS </h1>
+<p>En esta actividad se probarán las características de diferentes páginas web. Genere un documento HTML5 que muestre el resultado de las pruebas realizadas.</p>
+<h4>Peticiones desde el shell</h4>
+<p>Normalmente el usuario utiliza un navegador gráfico pero, en ocasiones, resulta conveniente descargar un fichero o navegar por la web desde el shell.
+
+Utilice las siguientes herramientas para descargar un fichero y navegar desde el shell:</p>
+<h3>Curl</h3>
+<img src="curl.png" alt="curl">
+</img>
+<h3>wget</h3>
+<img src="wget.png" alt="wget">
+</img>
+<h3>lynx</h3>
+<img src="lynx.png" alt="lynx">
+</img>
+<h3>links</h3>
+<img src="links.png" alt="links">
+</img>
+<h2>Versión del protocolo HTTP</h2>
+<p>Utilice las herramientas de desarrollo del navegador Firefox para obtener información sobre la versión del protocolo HTTP utilizado en los siguientes servicios.</p>
+<table class="egt" border="1px solid black">
+  <tr>
+    <td>Página:</td>
+    <td>HTTP/HTTS</td>
+    <td>Versión</td>
+    <td>Solicitudes</td>
+    <td>Tiempo (finalizado)</td>
+    <td>Server</td>
+    <td>Content-Encoding</td>
+    <td>Strict-Transport-Security</td>
+  </tr>
+  <tr>
+    <td>elpuig.xeill.net</td>
+    <td>https</td>
+    <td>HTTP/1.1</td>
+    <td>21</td>
+    <td>5,38s</td>
+    <td>Zope/(2.13.20, python 2.7.3, linux2) ZServer/1.1</td>
+    <td>gzip</td>
+    <td>max-age=15768000</td>
+  </tr>
+  <tr>
+<td>ru.wikipedia.org</td>
+<td>https</td>
+<td>HTTP/2.0</td>
+<td>47</td>
+<td>26,90s</td>
+<td>upload.wikimedia.org</td>
+<td>gzip,deflate,br</td>
+<td>max-age=106384710; includeSubDomains; preload</td>
+  </tr>
+  <tr>
+    <td>elpais.com</td>
+    <td>https</td>
+    <td>HTTP/1.1</td>
+    <td>132</td>
+    <td>32,68s</td>
+    <td>nginx/1.3.5 epet/0.8.0.2</td>
+    <td>gzip, deflate, br</td>
+    <td></td>
+</tr>
+<tr>
+  <td>www.lavanguardia.com</td>
+  <td>http</td>
+  <td>HTTP/1.1</td>
+  <td>147</td>
+  <td>1,28min</td>
+  <td>nginx</td>
+  <td>gzip</td>
+  <td> </td>
+</tr>
+<tr>
+  <td>www.google.com</td>
+  <td>https</td>
+  <td>HTTP/2.0</td>
+  <td>27</td>
+  <td>6,25s</td>
+  <td></td>
+  <td>gzip, deflate, br</td>
+  <td></td>
+</tr>
+<td>www.youtube.com</td>
+<td>https</td>
+<td>HTTP/2.0</td>
+<td>69</td>
+<td>16,71</td>
+<td>YouTube Frontend Proxy</td>
+<td>gzip, deflate, br</td>
+<td>max-age=31536000</td>
+</tr>
+<td>h20.examp1e.net</td>
+<td>https</td>
+<td>HTTP/2.0</td>
+<td>2</td>
+<td>143ms</td>
+<td> </td>
+<td>gzip, deflate</td>
+<td> </td>
+</tr>
+<td>caddyserver.com</td>
+<td>https</td>
+<td>HTTP/2.0</td>
+<td>28</td>
+<td>3,48s</td>
+<td>Caddy</td>
+<td>gzip, deflate</td>
+<td></td>
+</tr>
+</table>
+<h3>QUIC</h3>
+<h5>Utilice las herramientas del desarrollador de Chromium para:</h5>
+<p>Activar el soporte para QUIC en la URL: chrome://flags/#enable-quic</p>
+<img src="QUIC.png" alt="QUIC">
+<p>Observar el uso de QUIC en la URL: chrome://net-internals/#quic</p>
+<img src="QUIC2.png" alt="QUIC">
+<p>Determinar qué servicios (de los de la lista anterior) utilizan QUIC</p>
+<h5>Consulte en el sitio HTTP Archive:</h5>
+<p>El total transferido y el número de peticiones</p>
+<p>El uso de HTTPS</p>
+<p>El uso de compresión</p>
+<h3>Rendimiento</h3>
+<p>El comando ab forma parte de las herramientas que acompañan al servidor web Apache y permite generar peticiones concurrentes para poner a prueba un servidor.</p>
+<p>Por ejemplo, para solicitar 1000 veces con un nivel de concurrencia de 25 la página web del centro se puede escribir:</p>
+<p>ab -n 1000 -c 25 https://elpuig.xeill.net/</p>
+<h5>Utilice el comando ab para solicitar las siguientes webs:</h5>
+<p>https://elpuig.xeill.net/</p>
+<p>https://ru.wikipedia.org/ (ab -n 1000 -c 25 https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0)</p>
+<p>https://www.google.es/</p>
+<h3> Y rellenar la siguiente tabla:</h3>
+<table>
+  <tr>
+    <td>Server hostname</td>
+    <td>Server software</td>
+    <td>SSL/TLS Protocol</td>
+    <td>Document length</td>
+    <td>Time taken</td>
+    <td>Failed request</td>
+    <td>Requests per second</td>
+    <td>Transfer rate</td>
+  </tr>
+  <tr>
+    <td>elpuig.xeill.net</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
